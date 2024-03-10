@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/noteCard"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginHorizontal="10dp"
+            android:layout_marginTop="10dp"
+            app:cardCornerRadius="10dp"
+            app:layout_constraintBottom_toTopOf="@id/space"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <Space
+            android:id="@+id/space"
+            android:layout_width="match_parent"
+            android:layout_height="10dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/descTv" />
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/titleTv"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:elevation="10dp"
+            android:padding="15dp"
+            android:ellipsize="end"
+            android:maxLines="5"
+            android:text="Title"
+            android:textStyle="bold"
+            android:textSize="18sp"
+            app:layout_constraintEnd_toStartOf="@id/deleteNote"
+            app:layout_constraintStart_toStartOf="@id/noteCard"
+            app:layout_constraintTop_toTopOf="@id/noteCard"
+            tools:text="Android Developer" />
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/descTv"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:elevation="10dp"
+            android:paddingHorizontal="15dp"
+            android:paddingBottom="10dp"
+            android:ellipsize="end"
+            android:maxLines="5"
+            app:layout_constraintBottom_toBottomOf="@id/noteCard"
+            app:layout_constraintEnd_toStartOf="@id/deleteNote"
+            app:layout_constraintStart_toStartOf="@id/noteCard"
+            app:layout_constraintTop_toBottomOf="@id/titleTv"
+            tools:text="hello this is my note app .I hope you like it" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/deleteNote"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:elevation="10dp"
+            android:layout_marginEnd="10dp"
+            android:src="@drawable/delete_icon"
+            app:layout_constraintBottom_toBottomOf="@id/noteCard"
+            app:layout_constraintEnd_toEndOf="@id/noteCard"
+            app:layout_constraintStart_toEndOf="@id/descTv"
+            app:layout_constraintTop_toTopOf="@id/noteCard" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
